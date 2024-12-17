@@ -1,25 +1,23 @@
-let historyField = document.getElementById("history");
+let equationField = document.getElementById("equation");
 let resultField = document.getElementById("result");
 
 function clearALl() {
-  historyField.value = "";
+  equationField.value = "";
   resultField.value = "";
 }
 function deleteLast() {
-  historyField.value = "";
+  equationField.value = "";
 }
 
 function appendValue(value) {
-  resultField.value += value;
-  console.log("hello");
-  
+  equationField.value += value;
+  // calculateResult();
 }
 
 function calculateResult() {
   try {
-    const expression = resultField.value;
+    const expression = equationField.value;
     const result = eval(expression);
-    historyField.value = expression + " =";
     resultField.value = result;
   } catch (error) {
     resultField.value = "Error";
